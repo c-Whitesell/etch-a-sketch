@@ -8,6 +8,8 @@ const gridRule = [...stylesheet.cssRules].find(
 );
 // sets initial val of text on page to starting val of range slider
 value.textContent = slider.value;
+// creates the initial 256 div's needed for a 16x16 grid
+gridCreator(parseInt(slider.value));
 // creates a grid based off the starting value of the range slider (16x16)
 gridRule.style.setProperty(
   'grid-template-columns',
@@ -35,5 +37,3 @@ function gridCreator(gridNum) {
     i++;
   }
 }
-
-gridCreator(parseInt(slider.value));
